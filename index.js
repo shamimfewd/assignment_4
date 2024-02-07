@@ -22,16 +22,36 @@ function checkName(name) {
   let arr = ["A", "y", "i", "e", "o", "u", "w"];
   let caseCompatibility = arr.toString().toLowerCase();
 
-  let lastChar = name[name.length - 1];
+  let endOfName = name[name.length - 1];
 
   if (typeof name !== "string") {
     return "invalid";
   }
 
-  if (caseCompatibility.includes(lastChar)) {
+  if (caseCompatibility.includes(endOfName)) {
     return "Good Name";
   } else {
     return "Bad Name";
   }
 }
 
+
+
+
+function deleteInvalids(array) {
+  let arr = [];
+
+  if (!Array.isArray(array)) {
+    return "Invalid Array";
+  }
+
+  for (const number of array) {
+    if (typeof number === "number" && !isNaN(number)) {
+      arr.push(number);
+    }
+  }
+  return arr;
+}
+
+// const output = deleteInvalids({num: [ 1 , 2 , 3 ]});
+// console.log(output);

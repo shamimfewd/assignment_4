@@ -25,7 +25,7 @@ function checkName(name) {
   let lastChar = name[name.length - 1];
 
   if (typeof name !== "string") {
-    return "Invalid";
+    return "invalid";
   }
 
   if (caseCompatibility.includes(lastChar)) {
@@ -35,21 +35,3 @@ function checkName(name) {
   }
 }
 
-const output = checkName("mahbuba");
-console.log(output);
-
-// function checkName(name){
-//     last_chars = ['A', 'Y', 'I', 'E', 'O', 'U', 'W']
-//     last_char = last_chars[last_chars.length - 1]
-//     // arr[arr.length - 1]
-
-// if (last_char in last_chars)
-//     return "Good Name"
-// else{
-//     return "Bad Name"
-//     }
-
-// }
-
-//    const output = checkName('shamiE')
-//    console.log(output);

@@ -35,9 +35,6 @@ function checkName(name) {
   }
 }
 
-
-
-
 function deleteInvalids(array) {
   let arr = [];
 
@@ -55,3 +52,34 @@ function deleteInvalids(array) {
 
 // const output = deleteInvalids({num: [ 1 , 2 , 3 ]});
 // console.log(output);
+
+function password(obj) {
+  let site = obj.siteName;
+  let birthDay = obj.birthYear;
+  let username = obj.name;
+
+
+  if (
+    !obj.hasOwnProperty("siteName") ||
+    !obj.hasOwnProperty("birthYear") ||
+    !obj.hasOwnProperty("name")
+  ) {
+    return "invalid";
+  }
+
+  if (obj.birthYear.toString().length !== 4) {
+    return "invalid";
+  }
+  let result =
+    site.charAt(0).toUpperCase() +
+    site.slice(1) +
+    "#" +
+    username +
+    "@" +
+    birthDay;
+
+  return result;
+}
+
+let output = password({ name: "kolimuddin" , birthYear: 1999 , siteName: "google" });
+console.log(output);

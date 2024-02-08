@@ -58,7 +58,6 @@ function password(obj) {
   let birthDay = obj.birthYear;
   let username = obj.name;
 
-
   if (
     !obj.hasOwnProperty("siteName") ||
     !obj.hasOwnProperty("birthYear") ||
@@ -81,5 +80,33 @@ function password(obj) {
   return result;
 }
 
-let output = password({ name: "kolimuddin" , birthYear: 1999 , siteName: "google" });
-console.log(output);
+// let output = password({ name: "kolimuddin" , birthYear: 1999 , siteName: "google" });
+// console.log(output);
+
+function monthlySavings(arr, livingCost) {
+  let savings = 0;
+
+  if (!Array.isArray(arr) || typeof livingCost !== "number"){
+    return 'invalid input'
+  }
+    for (const item of arr) {
+      savings = savings + item;
+    }
+
+  if (arr.includes(3000)) {
+    let payment = arr.indexOf(3000);
+    let bankTax = (arr[payment] * 20) / 100;
+    savings = savings - bankTax;
+  }
+
+  let living = savings - livingCost;
+
+  if (living < 0) {
+    return "earn more";
+  }
+  return living;
+}
+
+// let output = monthlySavings({name: 'shamim'});
+
+// console.log(output);
